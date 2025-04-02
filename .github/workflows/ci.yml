@@ -92,11 +92,11 @@ jobs:
           ssh-private-key: |
             ${{ secrets.SSH_KEY }}
 
-#      - name: Adding Known Hosts
-#        run: |
-#          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-#          echo "DEBUG KNOWN_HOSTS"
-#          cat ~/.ssh/known_hosts
+      - name: Adding Known Hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          echo "DEBUG KNOWN_HOSTS"
+          cat ~/.ssh/known_hosts
 
       - name: Create .env file
         run: |
